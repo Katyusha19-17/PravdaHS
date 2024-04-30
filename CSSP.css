@@ -1,0 +1,45 @@
+body{
+    font-family: "Comic Sans MS";
+    letter-spacing: 0.15em;
+    background-color: #f2e9d3;
+    font-size: 12px;
+    float: center;
+}
+
+#strona{
+    max-width: 1200px;
+    min-width: 720px;
+    margin: 10px auto 10px auto;
+    padding: 20px;
+    border: 4px double #000;
+    background-color: #ffffff;
+    float: center;
+}
+
+#baner{
+    width: 48.4%;
+    margin: 10px auto 25px auto;
+    float: center;
+}
+
+#nawigacja{
+    font-family: "Comic Sans MS";
+    letter-spacing: 0.07em;
+    font-size: 12px;
+    padding: 1px;
+    float: center;
+    width: auto;
+}
+#obraz{
+    float: center;
+    width: 500px;
+    height: auto;
+    border-color: red;
+    border-style: dashed;
+}
+
+.text{
+    float: center;
+    width: 1000px;
+
+}

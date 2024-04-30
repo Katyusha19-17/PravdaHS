@@ -1,0 +1,198 @@
+<html>
+    <title>Pravda-Ankieta</title>
+    <head><link rel="stylesheet" href="CSSP.css"> <link rel="icon" href="https://static.wikia.nocookie.net/gup/images/7/7f/GUP_PravdaSmall_3053.png/revision/latest?cb=20200524102743">
+
+        <script>
+            function strona1(){
+                location.href="Index.html"
+            }
+
+            function strona2(){
+                location.href="Ankieta.html"
+            }
+
+            function strona3(){
+                location.href="Galeria.html"
+            }
+
+            function strona4(){
+                location.href="Licznik osob.html"
+            }
+
+            function strona5(){
+                location.href="Podstrona2.html"
+            }
+
+            var iloscPytan = 7
+            var wynik = 0
+            var wynikPokaz = 0
+            var pytania = new Array(iloscPytan)
+            var kluczOdpowiedzi = new Array("0","1","4","3","0","2","1")
+
+            function pobierz(){
+                for(i=1; i <= iloscPytan; i++){
+                    for(j = 0; j < 5; j++){
+                        if(eval("document.getElementById(\"test\").Pytanie" + i + "[" + j + "].checked == true")){
+                            pytania[i] = eval("document.getElementById(\"test\").Pytanie" + i + "[" + j + "].value")
+                            break;
+                        }
+                    }
+                }
+            }
+
+            function sprawdz(){
+                for(i = 1; i<= iloscPytan; i++){
+                    if(pytania[i]==kluczOdpowiedzi[i-1])
+                    wynik++
+                }
+            }
+
+            function main(){
+                pobierz();
+                sprawdz();
+                wynikPokaz = Math.round((wynik / iloscPytan )*100)
+
+                var imie = document.getElementById('imie').value
+                var nazwisko = document.getElementById('nazwisko').value
+                var plec = document.getElementById('plec').value
+                var klasa = document.getElementById('klasa').value
+                var narodowosc = document.getElementById('narodowosc').value
+                alert("Udzieliłeś/aś "+wynik+" poprawnych odpowiedzi"+ "\n"+ wynikPokaz + "% poprawnych odpowiedzi" + "\n" + "Twoje dane zostały zapisame jako: "+"\n"+ "Imie: " + imie + "\n" + "Nazwisko: " + nazwisko + "\n" + "Płeć: " + plec + "\n" + "Klasa: " + klasa + "\n" + "narodowość: " + narodowosc)
+            
+                wynik=0
+                wynikPokaz=0
+            }
+        </script>
+        
+    </head>
+    <body>
+        <center>
+        <div id="strona">
+            <div id="baner"><img src="Baner.jpg"></div>
+            <hr>
+            <div id="nawigacja">
+                
+                    <input type="button" value="Strona główna" onclick="strona1()">
+                    <input type="button" value="Ankieta" style="color: red;" onclick="strona2()">
+                    <input type="button" value="Galeria Katjuszycy" onclick="strona3()">
+                    <input type="button" value="Licznik" onclick="strona4()">
+                    <input type="button" value="Podstrona2" onclick="strona5()">
+                <hr>
+            </div>
+            <div class="text">
+                <hr>
+                <h1>Ankieta</h1>
+                <hr>
+            </div>
+            <fieldset style="margin: 100px;">
+                <center> <legend style="color: red;"><h1>Quizzzzzzzz</h1></legend>
+                <form name="test" id="test" action="javascript:void(0)"; onsubmit="main();">
+    
+                    <a>Podaj imie</a>
+                    <input id="imie" name="imie" type="text" value="">
+                    <br>
+                    <a>Podaj nazwisko</a>
+                    <input id="nazwisko" type="text" value="">
+                    <br>
+    
+                    <a>Podaj płeć</a>
+                    <select id="plec">
+                        <option value="Kobieta" name="plec">KObieta</option>
+                        <option value="Mężczyzna" name="plec">Hłop</option>
+                        <option value="Bojowy helokopter apacz" name="plec">Nie ma więcej pci</option>
+                    </select>
+                    <br>
+    
+                    <a>Podaj klasę</a>
+                    <select id="klasa">
+                        <option value="1Pr" name="klasa">1Pr</option>
+                        <option value="2Pr" name="klasa">2Pr</option>
+                        <option value="3Pr" name="klasa">3Pr</option>
+                        <option value="4Pr" name="klasa">4Pr</option>
+                        <option value="5Pr" name="klasa">5Pr</option>
+                    </select>
+                    <br>
+                    <a>Podaj narodowość</a>
+                    <select id="narodowosc">
+                        <option value="Polak" name="narodowość">Polak</option>
+                        <option value="Węgier" name="narodowość">Węgier</option>
+                        <option value="Ukrainiec" name="narodowość">Ukrainiec</option>
+                        <option value="Niemiec" name="narodowość">Niemiec</option>
+                        <option value="Rosjanin" name="narodowość">Rosjanin</option>
+                        <option value="Anglik" name="narodowość">Anglik</option>
+                    </select>
+    
+                   <p><b>Kto jest najlepszym przyjacielem Katyushy</b></p>
+                   <input name="Pytanie1" value="0" type="radio" checked>Nonna
+                   <input name="Pytanie1" value="1" type="radio">Klara
+                   <input name="Pytanie1" value="2" type="radio">Nina
+                   <input name="Pytanie1" value="3" type="radio">Alina
+                   <input name="Pytanie1" value="4" type="radio">Miho
+                   <br>
+                   <br>
+    
+                   <p><b>Jaki pseudonim posiada Katyusha</b></p>
+                   <input name="Pytanie2" value="0" type="radio" checked>Hungry Snow
+                   <input name="Pytanie2" value="1" type="radio">Drifting Snow
+                   <input name="Pytanie2" value="2" type="radio">Yellow Snow
+                   <input name="Pytanie2" value="3" type="radio">Iosif Stalin
+                   <input name="Pytanie2" value="4" type="radio">Boeuf Stroganov
+                   <br>
+                   <br>
+    
+                   <p><b>Co jest ulubioną potrawą Katyushy</b></p>
+                   <input name="Pytanie3" value="0" type="checkbox" checked>Schabowy
+                   <input name="Pytanie3" value="1" type="checkbox">Crosanty
+                   <input name="Pytanie3" value="2" type="checkbox">Czekolada
+                   <input name="Pytanie3" value="3" type="checkbox">Omlet
+                   <input name="Pytanie3" value="4" type="checkbox">Beef Stroganoff
+                   <br>
+                   <br>
+    
+                   <p><b>Jaki jest ulubiomy kwiat Katyushy</b></p>
+                   <input name="Pytanie4" value="0" type="checkbox" checked>Róża
+                   <input name="Pytanie4" value="1" type="checkbox">Tulipan
+                   <input name="Pytanie4" value="2" type="checkbox">Koniczyna
+                   <input name="Pytanie4" value="3" type="checkbox">Stokrotka
+                   <input name="Pytanie4" value="4" type="checkbox">Mlecze
+                   <br>
+                   <br>
+    
+                   <p><b>Jaki jest ulubiony czołg Katyushy</b></p>
+                   <input name="Pytanie5" value="0" type="checkbox" checked>KW-2
+                   <input name="Pytanie5" value="1" type="checkbox">KW-1
+                   <input name="Pytanie5" value="2" type="checkbox">T-34-85 (D-5t)
+                   <input name="Pytanie5" value="3" type="checkbox">T-34-85
+                   <input name="Pytanie5" value="4" type="checkbox">JS-2
+                   <br>
+                   <br>
+    
+                   <p><b>Jak Katyusha przezywa Miho Nishizumi</b></p>
+                   <input name="Pytanie6" value="0" type="checkbox" checked>Noob 
+                   <input name="Pytanie6" value="1" type="checkbox">Idiot
+                   <input name="Pytanie6" value="2" type="checkbox">Pirozhki
+                   <input name="Pytanie6" value="3" type="checkbox">Old
+                   <input name="Pytanie6" value="4" type="checkbox">Small
+                   <br>
+                   <br>
+    
+                   <p><b>Jakim czołgiem jeźdźiła</b></p>
+                   <input name="Pytanie7" value="0" type="checkbox" checked>T-34-85 (D-5t)
+                   <input name="Pytanie7" value="1" type="checkbox">T-34-85
+                   <input name="Pytanie7" value="2" type="checkbox">JS-2
+                   <input name="Pytanie7" value="3" type="checkbox">KW-2
+                   <input name="Pytanie7" value="4" type="checkbox">T-34-76
+                   <br>
+                   <br>
+    
+    
+                   <br>
+                   <input type="submit" value="sprawdź cały test">
+                   <br>
+            </form>
+        </center>
+        </fieldset>
+        </div>
+    </center>
+    </body>
+</html>

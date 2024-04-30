@@ -1,0 +1,68 @@
+<html>
+    <title>Pravda</title>
+    <head><link rel="stylesheet" href="CSSP.css"> <link rel="icon" href="https://static.wikia.nocookie.net/gup/images/7/7f/GUP_PravdaSmall_3053.png/revision/latest?cb=20200524102743">
+
+        <script>
+            function strona1(){
+                location.href="Index.html"
+            }
+
+            function strona2(){
+                location.href="Ankieta.html"
+            }
+
+            function strona3(){
+                location.href="Galeria.html"
+            }
+
+            function strona4(){
+                location.href="Licznik osob.html"
+            }
+
+            function strona5(){
+                location.href="Podstrona2.html"
+            }
+            
+            function licznik(){
+                var a
+                var b
+                a = Math.floor(Math.random() * 101);
+                b = document.getElementById("textbox")
+                b.value=a
+
+                if(a==69){
+                    alert("Nice")
+                    for(var i = 0; i<69; i++){
+                        console.log("Nice")
+                    }
+                }
+            }
+        </script>
+
+    </head>
+    <body onload="licznik()">
+        <center>
+        <div id="strona">
+            <div id="baner"><img src="Baner.jpg"></div>
+            <hr>
+            <div id="nawigacja">
+                
+                    <input type="button" value="Strona główna"onclick="strona1()">
+                    <input type="button" value="Ankieta" onclick="strona2()">
+                    <input type="button" value="Galeria Katjuszycy" onclick="strona3()">
+                    <input type="button" value="Licznik" style="color: red;"  onclick="strona4()">
+                    <input type="button" value="Podstrona2" onclick="strona5()">
+                <hr>
+            </div>
+            <div class="text">
+                <hr>
+                <h1>Licznik osób</h1>
+                <hr>
+
+            </div>
+            Aktualnie tyle osób przegląda tą stronę           
+            <input type="text" id="textbox">
+        </div>
+    </center>
+    </body>
+</html>
